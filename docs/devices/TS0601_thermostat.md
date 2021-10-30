@@ -1,13 +1,14 @@
 ---
 title: "TuYa TS0601_thermostat control via MQTT"
 description: "Integrate your TuYa TS0601_thermostat via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
-addedAt: 2020-07-20T23:08:11Z
+addedAt: 2021-10-30T12:58:50
 pageClass: device-page
 ---
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # TuYa TS0601_thermostat
@@ -19,9 +20,10 @@ pageClass: device-page
 | Description | Radiator valve with thermostat |
 | Exposes | lock (state), switch (state), battery_low, position, climate (current_heating_setpoint, local_temperature, system_mode, local_temperature_calibration, away_mode, preset), away_preset_days, boost_time, comfort_temperature, eco_temperature, force, max_temperature, min_temperature, week, away_preset_temperature, linkquality |
 | Picture | ![TuYa TS0601_thermostat](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/TS0601_thermostat.jpg) |
-| White-label | Moes HY368, Moes HY369RT, SHOJZJ 378RT |
+| White-label | Moes HY368, Moes HY369RT, SHOJZJ 378RT, Silvercrest TVR01 |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
 
 
@@ -116,6 +118,8 @@ After this command thermostat responds with two messages. One for calibration ch
         "eco_temperature": 17
     }
     ```
+
+<!-- Notes END: Do not edit below this line -->
 
 
 ## OTA updates

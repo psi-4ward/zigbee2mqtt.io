@@ -7,7 +7,8 @@ pageClass: device-page
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # Hive SLR1b
@@ -21,17 +22,20 @@ pageClass: device-page
 | Picture | ![Hive SLR1b](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/SLR1b.jpg) |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
+
 
 ### Pairing
 
-To pair the thermostat with Zigbee2Mqtt, follow these steps:
+To pair the thermostat with Zigbee2MQTT, follow these steps:
 
-1. Temporarily disconnect any thermostat controllers connected to the thermostat by remove a battery from them. 
+1. Temporarily disconnect any thermostat controllers connected to the thermostat by remove a battery from them.
 2. Turn the thermostat and boiler off, then on again to ensure it is not trying to connect to any thermostat controllers.
 3. Once the thermostat and boiler are on, hold down the Central heating button on the device until the Central heating'light turns white/ pink, then release the button. This will enable stand-alone mode on the thermostat.
 4. Hold down the central heating button again until the Central heating light begins to flash amber. The device is now in pairing mode and should be found by Zigbee2MQTT.
 5. You can now re-insert the battery back into any thermostat controllers disconnected in step 1 and pair them to the boiler (and optionally Zigbee2MQTT). For information on pairing the thermostat controllers see the pairing instructions for the [Hive SLT3B](./SLT3.md). Note that the thermostat's Central heating light will remain amber until a controller is paired with the thermostat, however the thermostat will still function correctly.
+
 
 ### How to start/edit native boost
 The receiver has support for native Boost, which will allow to display the remaining time on a compatible remote.
@@ -75,6 +79,8 @@ Send the following payload to the topic `zigbee2mqtt/FRIENDLY_NAME/set`:
 Note: You will also notice that `temperature_setpoint_hold_duration` automatically changes to `0` which means `not set`. `occupied_heating_setpoint` automatically changes to `1` degree C.
 
 This will also stop any native boosts that are currently active.
+
+<!-- Notes END: Do not edit below this line -->
 
 
 

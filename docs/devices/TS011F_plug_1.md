@@ -1,30 +1,36 @@
 ---
-title: "TuYa TS011F_plug control via MQTT"
-description: "Integrate your TuYa TS011F_plug via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
-addedAt: 2021-05-30T19:17:03Z
+title: "TuYa TS011F_plug_1 control via MQTT"
+description: "Integrate your TuYa TS011F_plug_1 via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
+addedAt: 2021-10-30T12:58:50
 pageClass: device-page
 ---
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
-# TuYa TS011F_plug
+# TuYa TS011F_plug_1
 
 |     |     |
 |-----|-----|
-| Model | TS011F_plug  |
+| Model | TS011F_plug_1  |
 | Vendor  | TuYa  |
 | Description | Smart plug (with power monitoring) |
 | Exposes | switch (state), power, current, voltage, energy, power_outage_memory, linkquality |
-| Picture | ![TuYa TS011F_plug](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/TS011F_plug.jpg) |
+| Picture | ![TuYa TS011F_plug_1](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/TS011F_plug_1.jpg) |
 | White-label | LELLKI TS011F_plug |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
 
-None
+
+### Pairing
+Pair this device with a long press (5 seconds) on the on/off button. The button will flash blue to indicate it's in pairing mode. When the blue flashing stops it should be paired and the led will turn solid red. If the led is solid blue, the device is not paired or paring was not successful.
+
+<!-- Notes END: Do not edit below this line -->
 
 
 

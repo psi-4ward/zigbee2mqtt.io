@@ -7,7 +7,8 @@ pageClass: device-page
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # Hive SLR2
@@ -21,19 +22,20 @@ pageClass: device-page
 | Picture | ![Hive SLR2](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/SLR2.jpg) |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
+
 
 ### Pairing
 
-* The following steps have not been tested with the
+To pair the thermostat with Zigbee2MQTT, follow these steps:
 
-To pair the thermostat with Zigbee2Mqtt, follow these steps:
-
-1. Temporarily disconnect any thermostat controllers connected to the thermostat by remove a battery from them. 
+1. Temporarily disconnect any thermostat controllers connected to the thermostat by remove a battery from them.
 2. Turn the thermostat and boiler off, then on again to ensure it is not trying to connect to any thermostat controllers.
 3. Once the thermostat and boiler are on, hold down the Central heating button on the device until the Central heating'light turns white/ pink, then release the button. This will enable stand-alone mode on the thermostat.
 4. Hold down the central heating button again until the Central heating light begins to flash amber. The device is now in pairing mode and should be found by Zigbee2MQTT.
 5. You can now re-insert the battery back into any thermostat controllers disconnected in step 1 and pair them to the boiler (and optionally Zigbee2MQTT). For information on pairing the thermostat controllers see the pairing instructions for the [Hive SLT3B](./SLT3.md). Note that the thermostat's Central heating light will remain amber until a controller is paired with the thermostat, however the thermostat will still function correctly.
+
 
 ### Sending payloads on dual channel receivers
 As the receiver makes use of two endpoints, `water` and `heat` there are two methods of sending payloads, both equally valid. For example, the `heat` endpoint:
@@ -138,6 +140,8 @@ This will also stop any native boosts that are currently active.
 
 ### Local and occupied temperature (water endpoint)
 The water endpoint functions as what could be considered an on/off switch based on `system_mode_water`. Because of that, the device uses fixed values for temperature. `local_temperature_water` is always 21 and `occupied_heating_setpoint_water` is always 22.
+
+<!-- Notes END: Do not edit below this line -->
 
 
 

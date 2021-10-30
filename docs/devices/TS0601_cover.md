@@ -1,13 +1,14 @@
 ---
 title: "TuYa TS0601_cover control via MQTT"
 description: "Integrate your TuYa TS0601_cover via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
-addedAt: 2021-01-31T22:24:43Z
+addedAt: 2021-10-30T12:58:50
 pageClass: device-page
 ---
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # TuYa TS0601_cover
@@ -19,9 +20,10 @@ pageClass: device-page
 | Description | Curtain motor/roller blind motor/window pusher/tubular motor |
 | Exposes | cover (state, position), options, linkquality |
 | Picture | ![TuYa TS0601_cover](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/TS0601_cover.jpg) |
-| White-label | Yushun YS-MT750, Zemismart ZM79E-DT, Binthen BCM100D, Binthen CV01A, Zemismart M515EGB, Tuya M515EGZT, TuYa DT82LEMA-1.2N, Moes AM43-0.45/40-ES-EB, Larkkey ZSTY-SM-1SRZG-EU, Zemismart ZM25TQ, Zemismart AM43, Zemismart M2805EGBZTN, Zemismart BCM500DS-TYZ, A-OK AM25 |
+| White-label | Yushun YS-MT750, Zemismart ZM79E-DT, Binthen BCM100D, Binthen CV01A, Zemismart M515EGB, TuYa M515EGZT, TuYa DT82LEMA-1.2N, Moes AM43-0.45/40-ES-EB, Larkkey ZSTY-SM-1SRZG-EU, Zemismart ZM25TQ, Zemismart AM43, Zemismart M2805EGBZTN, Zemismart BCM500DS-TYZ, A-OK AM25 |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
 
 
@@ -38,9 +40,11 @@ By publishing to `zigbee2mqtt/FRIENDLY_NAME/set` various device attributes can b
 - **reverse_direction**: (`true`/`false`, default: `false`). Device can be configured to act in an opposite direction.
 
 ### Device type specific configuration
-*[How to use device type specific configuration](../guide/configuration/devices-groups.md#specific-device-options)*
+*[How to use device type specific configuration](../guide/configuration/devices-groups.md)*
 
 * `invert_cover`: By default the position/tilt values mean: open = 100, closed = 0. This can be inverted by setting this option to true (so open = 0, close = 100).
+
+<!-- Notes END: Do not edit below this line -->
 
 
 

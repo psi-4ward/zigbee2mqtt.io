@@ -1,13 +1,14 @@
 ---
 title: "Xiaomi ZNCZ04LM control via MQTT"
 description: "Integrate your Xiaomi ZNCZ04LM via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
-addedAt: 2019-12-15T17:27:48Z
+addedAt: 2021-10-30T12:58:50
 pageClass: device-page
 ---
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # Xiaomi ZNCZ04LM
@@ -21,6 +22,7 @@ pageClass: device-page
 | Picture | ![Xiaomi ZNCZ04LM](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/ZNCZ04LM.jpg) |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
 
 
@@ -28,7 +30,7 @@ pageClass: device-page
 Press and hold the button on the device until the blue light starts blinking, release it and and the device will automatically join.
 
 ### Device type specific configuration
-*[How to use device type specific configuration](../guide/configuration/devices-groups.md#specific-device-options)*
+*[How to use device type specific configuration](../guide/configuration/devices-groups.md)*
 
 * `temperature_precision`: Controls the precision of `temperature` values,
 e.g. `0`, `1` or `2`; default `2`.
@@ -42,6 +44,8 @@ e.g. `1` would add 1 degree to the temperature reported by the device; default `
 This option allows the device to restore the last on/off state when it's reconnected to power.
 To set this option publish to `zigbee2mqtt/FRIENDLY_NAME/set` payload `{"power_outage_memory": true}` (or `false`).
 Now toggle the plug/switch once with the button on it, from now on it will restore its state when reconnecting to power.
+
+<!-- Notes END: Do not edit below this line -->
 
 
 ## OTA updates
@@ -87,7 +91,7 @@ It's not possible to read (`/get`) or write (`/set`) this value.
 The unit of this value is `A`.
 
 ### Consumer_connected (binary)
-Indicates whether device is physically attached. Device does not have to pull power or even be connected electrically (switch can be ON even if switch is OFF)..
+Indicates whether a plug is physically attached. Device does not have to pull power or even be connected electrically (state of this binary switch can be ON even if main power switch is OFF).
 Value can be found in the published state on the `consumer_connected` property.
 It's not possible to read (`/get`) or write (`/set`) this value.
 If value equals `true` consumer_connected is ON, if `false` OFF.

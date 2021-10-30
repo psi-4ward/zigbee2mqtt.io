@@ -1,13 +1,14 @@
 ---
 title: "Neo NAS-PD07 control via MQTT"
 description: "Integrate your Neo NAS-PD07 via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendors bridge or gateway."
-addedAt: 2021-10-01T17:18:02Z
+addedAt: 2021-10-30T12:58:50
 pageClass: device-page
 ---
 
 <!-- !!!! -->
 <!-- ATTENTION: This file is auto-generated through docgen! -->
-<!-- You can only edit the "## Notes"-Section. -->
+<!-- You can only edit the "## Notes"-Section till next h1 (#) or h2 heading (##). -->
+<!-- Do NOT use h1 or h2 heading within "## Notes"-Section. -->
 <!-- !!!! -->
 
 # Neo NAS-PD07
@@ -17,14 +18,15 @@ pageClass: device-page
 | Model | NAS-PD07  |
 | Vendor  | Neo  |
 | Description | Motion, temperature & humidity sensor |
-| Exposes | occupancy, humidity, temperature, tamper, power_type, linkquality |
+| Exposes | occupancy, humidity, temperature, tamper, battery_low, power_type, linkquality |
 | Picture | ![Neo NAS-PD07](https://psi-4ward.github.io/zigbee2mqtt.io/images/devices/NAS-PD07.jpg) |
 
 
+<!-- Notes BEGIN: You can edit here -->
 ## Notes
 
 ### Device type specific configuration
-*[How to use device type specific configuration](../guide/configuration/devices-groups.md#specific-device-options)*
+*[How to use device type specific configuration](../guide/configuration/devices-groups.md)*
 
 * `temperature_precision`: Controls the precision of `temperature` values,
 e.g. `0`, `1` or `2`; default `2`.
@@ -37,6 +39,8 @@ e.g. `1` would add 1 degree to the temperature reported by the device; default `
 * `humidity_precision`: Controls the precision of `humidity` values, e.g. `0`, `1` or `2`; default `2`.
 To control the precision based on the humidity value set it to e.g. `{80: 0, 10: 1}`,
 when humidity >= 80 precision will be 0, when humidity >= 10 precision will be 1. Precision will take into affect with next report of device.
+
+<!-- Notes END: Do not edit below this line -->
 
 
 
@@ -65,6 +69,12 @@ Indicates whether the device is tampered.
 Value can be found in the published state on the `tamper` property.
 It's not possible to read (`/get`) or write (`/set`) this value.
 If value equals `true` tamper is ON, if `false` OFF.
+
+### Battery_low (binary)
+Indicates if the battery of this device is almost empty.
+Value can be found in the published state on the `battery_low` property.
+It's not possible to read (`/get`) or write (`/set`) this value.
+If value equals `true` battery_low is ON, if `false` OFF.
 
 ### Power_type (enum)
 Value can be found in the published state on the `power_type` property.
