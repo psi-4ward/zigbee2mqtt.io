@@ -9,6 +9,7 @@ on:
 
 jobs:
   update-algolia-index:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
         # Try to workaround time gap between newly gh-pages deployment is available (cache cleared?)
