@@ -9,11 +9,11 @@ next: ../usage/
 
 In order to use Zigbee2MQTT we need the following hardware:
 
-1. <img src="../../images/zzh.jpg" title="ZZH" class="float-left" /> **A Zigbee Adapter** which is the interface between the Computer (or Server) where you run Zigbee2MQTT and the Zigbee radio
+1. <img src="../../images/zzh.jpg" title="ZZH" class="float-left" /> **Zigbee Adapter** which is the interface between the Computer (or Server) where you run Zigbee2MQTT and the Zigbee radio
 communication. Zigbee2MQTT supports a variety of adapters with different kind of connections like USB, GPIO or remote via WIFI or Ethernet.
   Recommended adapters have a chip starting with CC2652 or CC1352. See [supported Adapters](../adapters/README.md). <br class="clear" />
 
-2. <img src="../../images/pi.jpg" title="Raspberry Pi" class="float-left" /> **A Server** where you would run Zigbee2MQTT. Most Raspberry-Pi models are known to work but you can run it on many computers and platforms including Linux, Windows an MacOS. <br class="clear" />
+2. <img src="../../images/pi.jpg" title="Raspberry Pi" class="float-left" /> **Computer** to run Zigbee2MQTT (and the MQTT Server). Most Raspberry-Pi models are known to work but you can run it on many computers and platforms including Linux, Windows an MacOS. <br class="clear" />
 
 3. <img src="../../images/xiaomi_sensors.jpg" title="Zigbee devices" class="float-left" /> One or more **Zigbee Devices** which will be paired with Zigbee2MQTT. <br class="clear" />
 
@@ -24,17 +24,16 @@ See [Improve network range and stability](../../advanced/zigbee/02_improve_netwo
 
 ## Installation
 
-You can run Zigbee2MQTT in different ways, see [Installation](../installation/). In this example
+You can run Zigbee2MQTT in different ways, see [Installation](../installation/). In this example  
 [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) is used to
 set up and run Zigbee2MQTT.
 
 ### 1.) Find the Zigbee-Adapter
 
-After you plug the adapter in see the `dmesg` output to find the device location:
+After you plug the adapter see the `dmesg` output to find the device location:
 
 ```bash
 $ sudo dmesg
-
 ...
 usbcore: registered new interface driver ch341
 usbserial: USB Serial support registered for ch341-uart
@@ -49,8 +48,6 @@ $ ls -l /dev/ttyUSB0
 crw-rw---- 1 root dialout 188, May 16 19:15 /dev/ttyUSB0
 ```
 
-Here we can see that the adapter is owned by `root` and accessible from all users in the `dialout` group.
-
 ### 2.) Setup and start Zigbee2MQTT
 
 It's assumed, that you've a recent version of Docker and Docker-Compose is installed.
@@ -59,8 +56,9 @@ First, we create the `docker-compose.yml` file which defines how Docker would ru
 
 
 ```yaml
-version: '3.8'
+version: '3.5'
 services:
+  # MQTT Server
   mqtt:
     image: eclipse-mosquitto:2.0
     restart: unless-stopped
@@ -69,20 +67,27 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
+    # Mosquitto default config without authentication
     command: "mosquitto -c /mosquitto-no-auth.conf"
 
+  # Zigbee2MQTT
   zigbee2mqtt:
+    image: koenkk/zigbee2mqtt
     container_name: zigbee2mqtt
     restart: unless-stopped
-    image: koenkk/zigbee2mqtt
     volumes:
+      # Config and data directory
       - ./zigbee2mqtt-data:/app/data
+      # Used for adapter auto-detect and adapter properties
       - /run/udev:/run/udev:ro
     ports:
+      # Frontend port
       - 8080:8080
     environment:
-      - TZ=Europe/Berlin
+      # Timezone
+      TZ: Europe/Berlin
     devices:
+      # Adapter device
       - /dev/ttyUSB0:/dev/ttyUSB0
 ```
 
@@ -123,7 +128,7 @@ $ docker-compose logs -f
 After some short time you should see some log messages that Mosquitto and Zigbee2MQTT is running now.
 You can open the frontend using [http://localhost:8080](http://localhost:8080) (or the hostname of your remote server).
 
-We can now go on and pair our first device.
+We can now go on and pair the first device.
 
 
 ## Connect a device
