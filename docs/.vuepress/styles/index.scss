@@ -52,6 +52,10 @@ code {
   background: #292C34;
 }
 
+.custom-container {
+  border-radius: 6px;
+}
+
 .theme-default-content:not(.custom) {
   @media (max-width: $MQNarrow) {
     padding-left: 0.8rem;

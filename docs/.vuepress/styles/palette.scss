@@ -39,7 +39,7 @@ $MQMobileNarrow: 419px;
   --c-warning: #e7c000;
   --c-warning-bg: #fffae3;
   --c-warning-title: #ad9000;
-  --c-warning-text: #746000;
+  --c-warning-text: var(--c-text);
   --c-warning-text-accent: var(--c-text);
   --c-danger: #cc0000;
   --c-danger-bg: #ffe0e0;
@@ -86,7 +86,7 @@ html.dark {
   // custom container colors
   --c-tip: #318a62;
   --c-warning: #ceab00;
-  --c-warning-bg: #7e755b;
+  --c-warning-bg: #5e5231;
   --c-warning-title: #ceac03;
   --c-warning-text: #eeeeee;
   --c-danger: #940000;
